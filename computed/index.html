@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Application</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+  <div id="app">
+    <!-- Heading -->
+    <h1>{{text}}</h1>
+
+    <!-- Button -->
+    <div class="vue-button" v-on:click ='showGreet'>
+        Click to see a greeting
+    </div>
+
+    <input v-model="inptxt" class="vue-input" type="text" placeholder="text ...">
+    <div>{{toLoverCase}}</div>
+
+
+  </div>
+
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data(){
+        return{
+        text: 'Computed Property',
+        shown: true,
+        firstName: 'Julia',
+        inptxt: ''
+      }},
+
+      methods:{
+          showGreet(){
+            alert(`Hello ${this.firstName}`)
+          }
+      },
+
+      computed:{
+        toLoverCase() {
+          return this.inptxt.toLowerCase()
+        }
+      }
+      
+    })
+
+  </script>
+  
+</body>
+</html>

@@ -6,24 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue Application</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
 
   <div id="app">
-    <h1>
-      Headline: 
-    </h1>
-   {{text}}
+    <div
+    v-bind:title="RandNum"
+    v-if='shown'> 
+      {{text}}
+    </div>
   </div>
 
   <script>
-    var app = new Vue({
+    let app = new Vue({
       el: '#app',
-      data:{
-        text: 'Hi there'
-      }
+      data(){
+        return{
+        text: 'Hover over me and u will see a random number',
+        RandNum: Math.floor(Math.random() * 50 + 1),
+        shown: true,
+      }}
+      
     })
+
   </script>
   
 </body>

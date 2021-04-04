@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Application</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+  <div id="app" >
+      <h1 v-if='shown'>{{headline}}</h1>
+    <ul v-for ='color in colors'
+        v-if = 'color.color_visible == true'
+    >
+        <li>{{color.color_name}}</li>
+    </ul>
+
+  </div>
+
+  <script>
+     let app = new Vue({
+      el: '#app',
+      data(){
+        return{
+          headline: 'Headline - List Items',
+          shown: true,
+          colors: [
+        {color_name: 'red',
+        color_visible: true,
+        },
+
+        {color_name: 'green',
+        color_visible: false,
+        },
+
+        {color_name: 'black',
+        color_visible: true,
+        },
+
+        {color_name: 'purple',
+        color_visible: false,
+        },
+
+        {color_name: 'violet',
+        color_visible: true,
+        },
+
+        {color_name: 'grey',
+         color_visible: false,
+        }
+      ]
+
+
+
+      }}
+      
+    })
+
+
+
+
+
+    // let app = new Vue({
+    //   el: '#app',
+    //   data(){
+    //     return{
+
+    //     }
+    //   }{
+    //     headline: 'List items',
+    //     shown: true,
+    // }
+    // )
+  </script>
+</body>
+</html>
+
+
+
