@@ -20,7 +20,7 @@
         Click to see a greeting
     </div>
 
-    <input v-model="inptxt" class="vue-input" type="text" placeholder="text ...">
+    <input v-model="inp_txt" class="vue-input" type="text" placeholder="text ...">
     <div>{{toLoverCase}}</div>
 
 
@@ -34,7 +34,7 @@
         text: 'Computed Property',
         shown: true,
         firstName: 'Julia Ginger',
-        inptxt: ''
+        inp_txt: ''
       }},
 
       methods:{
@@ -45,8 +45,12 @@
 
       computed:{
         toLoverCase() {
-          return this.inptxt.toLowerCase()
+          return this.inp_txt.toLowerCase()
         }
+      },
+
+      created () {
+        alert(`The current tome is ${new Date()}`)
       }
       
     })
